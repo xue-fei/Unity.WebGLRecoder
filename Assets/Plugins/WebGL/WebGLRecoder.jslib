@@ -3,8 +3,8 @@ const WebGLRecoder = {
         
     },
     WebGLScreenShot: function(fileName) {
-        console.log('ScreenShot', Pointer_stringify(fileName));
-		ScreenShot(Pointer_stringify(fileName));
+        console.log('ScreenShot', UTF8ToString(fileName));
+		ScreenShot(UTF8ToString(fileName));
     },
     WebGLStartRecording: function() {
 		StartRecording();
@@ -12,11 +12,11 @@ const WebGLRecoder = {
     WebGLStopRecording: function(obj) {
         console.log("WebGLRecoder: Stopping recording");
         StopRecording();
-		Runtime.dynCall('v', obj, 0);
+		Module.dynCall_v(obj);
     },
     WebGLRecordDownload: function(fileName) {
-        console.log('RecordDownload: ', Pointer_stringify(fileName));
-        RecordDownload(Pointer_stringify(fileName));
+        console.log('RecordDownload: ', UTF8ToString(fileName));
+        RecordDownload(UTF8ToString(fileName));
     },
 	WebGLGetStudentName: function(){
 		var name = getStudentNameFromLocal();
