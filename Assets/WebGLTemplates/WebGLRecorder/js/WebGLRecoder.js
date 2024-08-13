@@ -6,7 +6,6 @@ let stream;
 function ScreenShot(fileName) {
 	console.log('ScreenShot', fileName);
 	canvasRecorder = document.querySelector('#unity-canvas');
-	const gl = canvasRecorder.getContext('webgl', {preserveDrawingBuffer: true});
 	console.log(typeof(canvasRecorder));
 	console.log(canvasRecorder);
 	var dataURL = canvasRecorder.toDataURL('image/png');
